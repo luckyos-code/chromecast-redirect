@@ -1,0 +1,19 @@
+body {
+  background-color: lightgrey;
+}
+
+.Castbutton {
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
+    --disconnected-color: white;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    width: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}

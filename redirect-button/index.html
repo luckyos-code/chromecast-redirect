@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Some meta data -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    
+    <title>Redirect</title>
+    <!-- Styling -->
+    <style>
+      div {
+        background-color: lightgrey;
+      }
+      
+      .castbutton {
+        padding: 0px;
+        margin: 0px;
+        vertical-align: top;
+        --disconnected-color: white;
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+        outline:none;
+        width: 32px;
+      }
+    </style>
+    <!-- Loading the CAF -->
+    <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+    <!-- Needed Javascript code -->
+    <script>
+      /**
+       *  Call Initilization
+       */
+      window['__onGCastApiAvailable'] = function(isAvailable) {
+        if (isAvailable) {
+          initializeCastApi();
+        }
+      };
+      
+      /**
+       *  Initilization
+       */
+      initializeCastApi = function() {
+        cast.framework.CastContext.getInstance().setOptions({
+          receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
+          autoJoinPolicy: chrome.cast.AutoJoinPolicy.PAGE_SCOPED,
+          defaultActionPolicy: chrome.cast.DefaultActionPolicy.CAST_THIS_TAB,
+          resumeSavedSession: false
+        });
+      };
+
+      /**
+       *  Redirect to other page without casting
+       */
+      function redirecter() {
+        window.location.href = "redirected.html"
+      }
+    </script>
+    
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root">
+      <!-- Create a Chromecast button mock up -->
+      <button class="castbutton" id="redirect-button" onclick="redirecter()" is="google-cast-button"></button>
+    </div>
+    
+  </body>
+</html>

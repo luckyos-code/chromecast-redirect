@@ -25,7 +25,8 @@ This Google Cast sender implements two buttons using the Cast Application Framew
  __Important__: Without a Chromecast device in your network the buttons won't show
 
 ## Known Issues
-* _cast-button_: Opening the page while in a Cast session (e.g. already casting the tab) will start an automated media cast, displaying nothing. This needs for one to restart the tab cast.
+* __(Testing hotfix)__ _cast-button_: Opening the page while in a Cast session (e.g. already casting the tab) will start an automated media cast, displaying nothing. This needs for one to restart the tab cast.
+* Buttons may not show or go
 
 ## API Documentation
 * Cast APIs: http://developers.google.com/cast/docs/chrome_sender_integrate

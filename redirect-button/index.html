@@ -30,35 +30,8 @@
     <!-- Loading the CAF -->
     <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
     <!-- Needed Javascript code -->
-    <script>
-      /**
-       *  Call Initilization
-       */
-      window['__onGCastApiAvailable'] = function(isAvailable) {
-        if (isAvailable) {
-          initializeCastApi();
-        }
-      };
-      
-      /**
-       *  Initilization
-       */
-      initializeCastApi = function() {
-        cast.framework.CastContext.getInstance().setOptions({
-          receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
-          autoJoinPolicy: chrome.cast.AutoJoinPolicy.PAGE_SCOPED,
-          defaultActionPolicy: chrome.cast.DefaultActionPolicy.CAST_THIS_TAB,
-          resumeSavedSession: false
-        });
-      };
-
-      /**
-       *  Redirect to other page without casting
-       */
-      function redirecter() {
-        window.location.href = "redirected.html"
-      }
-    </script>
+    <script src="init.js"></script>
+    <script src="redirect.js"></script>
     
   </head>
   <body>

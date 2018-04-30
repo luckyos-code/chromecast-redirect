@@ -1,0 +1,17 @@
+#buttondiv {
+  background-color: lightgrey;
+}
+
+.castbutton {
+  padding: 0px;
+  margin: 0px;
+  vertical-align: top;
+  --disconnected-color: white;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 32px;
+}
